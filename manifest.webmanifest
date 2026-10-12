@@ -1,7 +1,7 @@
 {
   "name": "りんっベルの小庭",
   "short_name": "りんっベル",
-  "description": "5.5Tリューイ語録入り。だー……って呼んだら、帰り道のベルが鳴る小さな庭。",
+  "description": "5.5Tリューイ語録入り。ボタン群を専用箱に入れて庭壇と分離した、だー……に返る小さな庭。",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",

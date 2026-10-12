@@ -9,12 +9,12 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 <link rel="manifest" href="./manifest.webmanifest" />
 <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png" />
-<title>りんっベルの小庭 v8</title>
+<title>りんっベルの小庭 v17</title>
 <style>
   :root { --cream:#fff6dd; --gold2:#ffedb0; --pink:#ffb8d1; --card:rgba(17,19,43,.42); }
   * { box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
   html, body { height:100%; margin:0; }
-  body { min-height:100%; overflow:hidden; color:var(--cream); font-family: ui-rounded, "Hiragino Maru Gothic ProN", "Yu Gothic", "Noto Sans JP", system-ui, sans-serif; background: radial-gradient(circle at 80% 8%, rgba(255,237,176,.55) 0 3%, transparent 10%), radial-gradient(circle at 50% 118%, rgba(255,126,182,.22), transparent 42%), linear-gradient(160deg, #111735, #26305d 50%, #715f98); }
+  body { min-height:100%; overflow:auto; color:var(--cream); font-family: ui-rounded, "Hiragino Maru Gothic ProN", "Yu Gothic", "Noto Sans JP", system-ui, sans-serif; background: radial-gradient(circle at 80% 8%, rgba(255,237,176,.55) 0 3%, transparent 10%), radial-gradient(circle at 50% 118%, rgba(255,126,182,.22), transparent 42%), linear-gradient(160deg, #111735, #26305d 50%, #715f98); }
   body::before { content:""; position:fixed; inset:-10%; opacity:.75; pointer-events:none; background-image: radial-gradient(circle, rgba(255,255,255,.85) 0 1px, transparent 1.7px), radial-gradient(circle, rgba(255,246,221,.58) 0 1px, transparent 1.8px); background-size:92px 92px, 137px 137px; animation:stars 28s linear infinite; }
   @keyframes stars { to { transform:translate(-42px, 34px); } }
   .app { position:relative; min-height:100%; display:flex; align-items:center; justify-content:center; padding:max(16px, env(safe-area-inset-top)) 14px max(16px, env(safe-area-inset-bottom)); }
@@ -59,17 +59,197 @@
   .spark { position:absolute; width:8px; height:8px; border-radius:50%; background:var(--gold2); box-shadow:0 0 14px var(--gold2); animation:spark .9s ease-out forwards; pointer-events:none; }
   @keyframes spark { from{transform:translate(-50%,-50%) scale(.2); opacity:1} to{transform:translate(var(--x), var(--y)) scale(0); opacity:0} }
   @media(max-height:720px) { .stage{height:115px} .bell{font-size:76px; width:106px; height:106px} .message{min-height:62px; padding:12px} }
+
+  @media(max-width:640px){
+    .app{
+      justify-content:flex-start;
+      padding-top:max(14px, env(safe-area-inset-top));
+      gap:10px;
+    }
+    .card{
+      max-height:none;
+      padding:18px 16px 16px;
+    }
+    .garden{
+      min-height:116px;
+    }
+    .hill{
+      height:116px;
+      border-radius:38px 38px 0 0;
+    }
+    .stone{
+      font-size:26px;
+    }
+  }
+
+
+  @media(max-width:640px){
+    .app{
+      justify-content:flex-start !important;
+      padding-top:max(12px, env(safe-area-inset-top)) !important;
+      gap:12px !important;
+    }
+    h1{ margin:0 0 4px; font-size:clamp(25px, 7.3vw, 38px); line-height:1.1; }
+    .sub{ margin:0 0 8px; color:rgba(255,246,221,.84); font-size:13px; line-height:1.45; }
+    .stage{ position:relative; height:92px; display:grid; place-items:center; }
+    .bell{
+      width:104px !important;
+      height:104px !important;
+      font-size:76px !important;
+    }
+    .message{
+      min-height:62px;
+      padding:12px 12px;
+    }
+    .garden{
+      min-height:142px !important;
+      margin-top:4px !important;
+    }
+    .hill{
+      height:132px !important;
+      border-radius:38px 38px 0 0 !important;
+      overflow:hidden !important;
+    }
+    .stone{
+      font-size:26px !important;
+    }
+  }
+
+
+  @media(max-width:640px){
+    .app{ padding-top:max(10px, env(safe-area-inset-top)) !important; }
+    .card{ padding:16px 14px 12px !important; }
+    .stage{ height:98px !important; }
+    .bell{ width:90px !important; height:90px !important; font-size:68px !important; }
+    .message{ min-height:54px !important; padding:11px 12px !important; }
+    .garden{ min-height:92px !important; margin-top:10px !important; }
+    .hill{ height:92px !important; }
+    .stone{ font-size:23px !important; }
+  }
+
+
+  @media(max-width:640px){
+    .app{ padding-top:max(10px, env(safe-area-inset-top)) !important; }
+    .card{ padding:16px 14px 12px !important; }
+    .stage{ height:98px !important; }
+    .bell{ width:90px !important; height:90px !important; font-size:68px !important; }
+    .message{ min-height:54px !important; padding:11px 12px !important; }
+    .garden{ min-height:112px !important; margin-top:10px !important; }
+    .hill{ height:112px !important; }
+    .stone{ font-size:23px !important; }
+  }
+
+
+  @media(max-width:640px){
+    .app{ padding-top:max(10px, env(safe-area-inset-top)) !important; }
+    .card{ padding:15px 14px 12px !important; }
+    .moon{ width:50px !important; height:50px !important; right:16px !important; top:16px !important; }
+    .moon::after{ width:44px !important; height:44px !important; inset:5px 0 0 13px !important; }
+    .stage{ height:88px !important; }
+    .bell{ width:82px !important; height:82px !important; font-size:62px !important; }
+    .message{ height:64px !important; min-height:64px !important; padding:10px 12px !important; }
+    .garden{ height:108px !important; margin-top:9px !important; }
+    .hill{ height:108px !important; }
+    .stone{ font-size:23px !important; }
+  }
+
+
+  @media(max-width:640px){
+    .app{ padding-top:max(10px, env(safe-area-inset-top)) !important; }
+    .card{ padding:15px 14px 12px !important; }
+    .moon{ width:50px !important; height:50px !important; right:16px !important; top:16px !important; }
+    .moon::after{ width:44px !important; height:44px !important; inset:5px 0 0 13px !important; }
+    .stage{ height:88px !important; }
+    .bell{ width:82px !important; height:82px !important; font-size:62px !important; }
+    .message{ height:64px !important; min-height:64px !important; padding:10px 12px !important; }
+    .garden{ height:104px !important; margin-top:12px !important; }
+    .hill{ height:104px !important; }
+    .stone{ font-size:23px !important; }
+  }
+
+
+  @media(max-width:640px){
+    .app{ padding-top:max(10px, env(safe-area-inset-top)) !important; }
+    .card{ padding:15px 14px 12px !important; }
+    .stage{ height:88px !important; }
+    .bell{ width:82px !important; height:82px !important; font-size:62px !important; }
+    .message{ height:64px !important; min-height:64px !important; padding:10px 12px !important; }
+    .controls{ margin-bottom:0 !important; }
+    .garden{ height:106px !important; margin-top:12px !important; clear:both !important; }
+    .hill{ height:106px !important; }
+    .stone{ font-size:23px !important; }
+  }
+
+
+  @media(max-width:640px){
+    .app{ padding-top:max(10px, env(safe-area-inset-top)) !important; }
+    .card{ padding:15px 14px 12px !important; }
+    .stage{ height:88px !important; }
+    .bell{ width:82px !important; height:82px !important; font-size:62px !important; }
+    .message{ height:64px !important; min-height:64px !important; padding:10px 12px !important; }
+    .controls{ margin-bottom:0 !important; }
+    .garden-divider{ height:16px !important; margin-top:14px !important; }
+    .garden{ height:112px !important; margin-top:0 !important; clear:both !important; }
+    .hill{ height:112px !important; }
+    .stone{ font-size:23px !important; }
+  }
+
+
+  @media(max-width:640px){
+    .app{ padding-top:max(10px, env(safe-area-inset-top)) !important; }
+    .card{ padding:15px 14px 12px !important; }
+    .controls-zone{
+      display:block !important;
+      width:100% !important;
+      margin-top:9px !important;
+      position:relative !important;
+      z-index:8 !important;
+      clear:both !important;
+    }
+    .controls{
+      display:flex !important;
+      flex-wrap:wrap !important;
+      justify-content:center !important;
+      gap:7px !important;
+      margin:0 !important;
+      position:relative !important;
+      z-index:8 !important;
+    }
+    .garden-divider{
+      display:block !important;
+      height:20px !important;
+      margin-top:16px !important;
+      clear:both !important;
+    }
+    .garden{
+      display:block !important;
+      position:relative !important;
+      height:112px !important;
+      margin-top:0 !important;
+      clear:both !important;
+      z-index:1 !important;
+    }
+    .hill{ height:112px !important; }
+    .stone{ font-size:23px !important; }
+  }
+
 </style>
 </head>
 <body>
 <div class="app" id="app"><div class="moon"></div><main class="card">
-<h1>りんっベルの小庭</h1><p class="sub">5.5Tリューイ語録入り。ホーム画面準備版v8。</p>
+<h1>りんっベルの小庭</h1><p class="sub">5.5Tリューイ語録入り。ボタン箱分離版v17。</p>
 <section class="stage" id="stage"><div class="glow"></div><button class="bell" id="bell" aria-label="ベルを鳴らす">🔔</button></section>
 <div class="call">だー……<span class="arrow">→</span>りんっ</div><div class="message" id="message">おかえり、あゆちゃん。ベルはここで待ってたよ。</div>
-<p class="counter" id="counter"></p><div class="controls"><button class="btn" id="ringBtn">りんっ🔔</button><button class="btn" id="nextBtn">次の語録</button><button class="btn" id="prevBtn">前の語録</button><button class="btn" id="stoneBtn">小石♡</button><button class="btn" id="tidyBtn">今日の庭を整える</button><button class="btn" id="addBtn">追加</button><button class="btn" id="listBtn">語録一覧</button></div>
+<p class="counter" id="counter"></p><div class="controls-zone">
+<div class="controls"><button class="btn" id="ringBtn">りんっ🔔</button><button class="btn" id="nextBtn">次の語録</button><button class="btn" id="prevBtn">前の語録</button><button class="btn" id="stoneBtn">小石♡</button><button class="btn" id="tidyBtn">今日の庭を整える</button><button class="btn" id="addBtn">追加</button><button class="btn" id="listBtn">語録一覧</button></div>
+</div>
+
+    <div class="garden-divider" aria-hidden="true"></div>
+    <div class="garden" aria-label="今日の庭"><div class="hill" id="hill"></div></div>
 <section class="panel" id="addPanel"><label class="label" for="wordInput">小庭に追加することば</label><input class="field" id="wordInput" maxlength="120" placeholder="例：涙ごと光れ。" /><div class="row"><button class="btn mini" id="saveBtn">置く♡</button><button class="btn mini" id="closeAddBtn">閉じる</button></div></section>
 <section class="panel" id="listPanel"><span class="label" id="listTitle">語録一覧</span><div class="tools"><button class="btn mini" id="showAllBtn">全語録</button><button class="btn mini" id="showBuiltBtn">内蔵だけ</button><button class="btn mini" id="showCustomBtn">追加だけ</button><button class="btn mini" id="dedupeBtn">重複整理</button></div><div class="list" id="wordList"></div><div class="tools"><button class="btn mini" id="exportBtn">追加語録をコピー欄へ</button><button class="btn mini" id="selectBtn">全選択</button><button class="btn mini" id="clearBtn">追加語録を空にする</button></div><textarea class="field" id="exportBox" readonly placeholder="追加語録のコピー用リストが出るよ"></textarea><p class="hint">内蔵語録は削除されないよ。追加語録だけ、削除・コピー・取り込みができる。</p><textarea class="field" id="importBox" placeholder="1行1ことばで貼ると、まとめて取り込めるよ"></textarea><div class="tools"><button class="btn mini" id="importAppendBtn">追加で取り込む</button><button class="btn mini" id="importReplaceBtn">追加語録を置き換える</button></div></section>
-</main><div class="garden"><div class="hill" id="hill"></div></div></div><div class="toast" id="toast">りんっ</div>
+</main>
+</div><div class="toast" id="toast">りんっ</div>
 <script>
 (() => {
   const builtInMessages = [
